@@ -3,8 +3,6 @@ const int motorPin = 3;
 const int irSensorPin = 5;
 bool irSensor_State = false;
 
-
-
 float duration_us, distance_cm;
 
 const int TRIG   = 12; 
@@ -27,6 +25,12 @@ void setup()
 void loop()
 {
 
+  digitalWrite(TRIG, LOW); 
+  delayMicroSeconds(2);
+  
+  /* I tried adding the two above back in
+  Let's see if that doesn't make a difference */
+  
   digitalWrite(TRIG, HIGH);
   delayMicroseconds(10);
   digitalWrite(TRIG, LOW);
@@ -46,7 +50,7 @@ void loop()
     else if(irSensor_State == false)
     {
       digitalWrite(motorPin, LOW);
-      delay(400);
+      // delay(400); -  LET'S SEE IF THIS ALSO MAKES A DIFFERENCE
     }
   
 
