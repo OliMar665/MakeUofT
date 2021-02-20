@@ -25,22 +25,19 @@ void setup()
 void loop()
 {
 
-  digitalWrite(TRIG, LOW); 
-  delayMicroSeconds(2);
+   /* digitalWrite(TRIG, LOW); 
+  delayMicroseconds(2);
   
-  /* I tried adding the two above back in
-  Let's see if that doesn't make a difference */
+  // I tried adding the two above back in
+  // Let's see if that doesn't make a difference
   
   digitalWrite(TRIG, HIGH);
   delayMicroseconds(10);
-  digitalWrite(TRIG, LOW);
-  
-  
-
+  digitalWrite(TRIG, LOW); */ 
   
     irSensor_State = digitalRead(irSensor_State);
     
-    if(irSensor_State)
+    if(irSensor_State == true)
     {
       digitalWrite(motorPin, HIGH);
       delay(5000);
@@ -53,7 +50,15 @@ void loop()
       // delay(400); -  LET'S SEE IF THIS ALSO MAKES A DIFFERENCE
     }
   
-
+  digitalWrite(TRIG, LOW); 
+  delayMicroseconds(2);
+  
+  // I tried adding the two above back in
+  // Let's see if that doesn't make a difference
+  
+  digitalWrite(TRIG, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG, LOW); 
    
   duration_us = pulseIn(ECHO, HIGH);
   // calculate the distance
@@ -63,8 +68,7 @@ void loop()
 
     digitalWrite(BUZZER, HIGH); 
   else
-      digitalWrite(BUZZER, LOW); 
-
+      digitalWrite(BUZZER, LOW);
 
   delay(500);
 }
