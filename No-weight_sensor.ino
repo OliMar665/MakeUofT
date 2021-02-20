@@ -66,9 +66,9 @@ void loop()
 
   if(distance_cm < DISTANCE_THRESHOLD)
 
-    digitalWrite(BUZZER, HIGH); 
+    digitalWrite(BUZZER, LOW); 
   else
-      digitalWrite(BUZZER, LOW);
+      digitalWrite(BUZZER, HIGH);
 
   delay(500);
 }
